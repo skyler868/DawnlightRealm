@@ -92,6 +92,6 @@ This project focuses on implementing core gameplay systems such as combat, enemy
 
 ## Notes / 说明
 
-Some assets used in this project are from Fab and are **not included in this repository** due to licensing restrictions.
+Some assets used in this project are from Fab and are **not included in this repository**.
 
-本项目中使用的部分资源来自 Fab，由于版权原因 **未包含在仓库中**。
+本项目中使用的部分资源来自 Fab，**未包含在仓库中**。
