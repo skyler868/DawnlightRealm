@@ -146,13 +146,13 @@ void AWeaponBase::OnUnEquip()
 void AWeaponBase::DropToWorld()
 {
 	DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-
+	SetOwner(nullptr); //  ·ÀÖ¹¸úËæµÐÈËÏú»Ù
 	if (Mesh)
 	{
 		Mesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 		Mesh->SetSimulatePhysics(true);
 	}
-
+	
 	//HitBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	OwnerCharacter = nullptr;

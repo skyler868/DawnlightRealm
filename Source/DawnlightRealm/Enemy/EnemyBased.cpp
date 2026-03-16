@@ -154,6 +154,9 @@ void AEnemyBased::Die()
 		Player->QuestComponent->NotifyEnemyKilled(EnemyID);
 	}
 
+	
+	
+
 	Super::Die();
 
 	

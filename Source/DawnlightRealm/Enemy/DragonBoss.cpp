@@ -165,7 +165,7 @@ void ADragonBoss::ApplyLightBeamDamage(const FVector& Start, const FVector& End)
 		Hit,
 		Start,
 		End,
-		ECC_Pawn,
+		ECC_Visibility,
 		Params
 	);
 
@@ -263,6 +263,7 @@ void ADragonBoss::EndLightBeam()
 
 void ADragonBoss::ApplyFireBreathDamage()
 {
+	
 	USkeletalMeshComponent* MeshComp = GetMesh();
 	if (!MeshComp) return;
 
@@ -292,7 +293,7 @@ void ADragonBoss::ApplyFireBreathDamage()
 		Hits,
 		Start,
 		FQuat::Identity,
-		ECC_Pawn,
+		ECC_Visibility,
 		Sphere,
 		Params
 	);
@@ -309,7 +310,7 @@ void ADragonBoss::ApplyFireBreathDamage()
 		// Ö»´òÍæ¼Ò
 		APlayerCharacterBased* Player =
 			Cast<APlayerCharacterBased>(HitActor);
-
+		
 		if (!Player) {
 
 			continue;
