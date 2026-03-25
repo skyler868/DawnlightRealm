@@ -28,37 +28,36 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
-	// 接/查
+	// 接/查任务
 	UFUNCTION(BlueprintCallable)
 	void AcceptQuest(FName QuestID);
 
 	UFUNCTION(BlueprintCallable)
-	EQuestState GetQuestState(FName QuestID) const;
+	EQuestState GetQuestState(FName QuestID) const;  // 获得任务状态
 
 
 	UFUNCTION(BlueprintCallable)
-	bool TryCompleteQuest(FName QuestID);
+	bool TryCompleteQuest(FName QuestID); // 完成任务
 
 	UFUNCTION(BlueprintCallable)
-	const FQuestData& GetQuestData(FName QuestID) const;
+	const FQuestData& GetQuestData(FName QuestID) const;  
 
 	// 进度
 	UFUNCTION(BlueprintCallable)
-	void NotifyEnemyKilled(FName EnemyID);
+	void NotifyEnemyKilled(FName EnemyID); // 击杀敌人
 
 	UPROPERTY(BlueprintAssignable)
 	FOnQuestUpdated OnQuestUpdated;
 
 	UPROPERTY(BlueprintReadOnly)
-	TMap<FName, FQuestData> Quests;
+	TMap<FName, FQuestData> Quests; // 任务数据
 
 	UFUNCTION(BlueprintCallable)
-	void GetAllQuests(TArray<FQuestData>& OutQuests) const;
+	void GetAllQuests(TArray<FQuestData>& OutQuests) const; // TMap转换为TArray 给蓝图用
+
 private:
 	UPROPERTY(EditAnywhere, Category = "Quest")
 	TArray<UQuestDataAsset*> QuestDataAssets;
 
-	bool IsQuestCompleted(FName QuestID) const;
-
-	
+	bool IsQuestCompleted(FName QuestID) const;  // 检查所有目标是否完成
 };

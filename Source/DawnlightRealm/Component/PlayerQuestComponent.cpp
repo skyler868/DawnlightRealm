@@ -24,7 +24,6 @@ void UPlayerQuestComponent::BeginPlay()
 	
 }
 
-
 // Called every frame
 void UPlayerQuestComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -75,7 +74,7 @@ EQuestState UPlayerQuestComponent::GetQuestState(FName QuestID) const
 	return EQuestState::NotAccepted;
 }
 
-void UPlayerQuestComponent::NotifyEnemyKilled(FName EnemyID)
+void UPlayerQuestComponent::NotifyEnemyKilled(FName EnemyID) 
 {
 	for (auto& Pair : Quests) {
 		FQuestData& Quest = Pair.Value;
@@ -83,10 +82,8 @@ void UPlayerQuestComponent::NotifyEnemyKilled(FName EnemyID)
 
 		for (FKillQuestObjective& obj : Quest.KillObjectives) {
 			if (obj.EnemyID == EnemyID && obj.CurrentCount < obj.RequiredCount) {
-				obj.CurrentCount++;
-				/*if (IsQuestCompleted(Quest.QuestID)) {
-					Quest.State = EQuestState::Completed;
-				}*/
+				obj.CurrentCount++;  // »÷É±Ä¿±ê
+			
 				OnQuestUpdated.Broadcast();
 			}
 		}
@@ -104,7 +101,7 @@ void UPlayerQuestComponent::GetAllQuests(TArray<FQuestData>& OutQuests) const
 	}
 }
 
-bool UPlayerQuestComponent::IsQuestCompleted(FName QuestID) const
+bool UPlayerQuestComponent::IsQuestCompleted(FName QuestID) const 
 {
 	const FQuestData* Quest = Quests.Find(QuestID);
 	if (!Quest) return false;

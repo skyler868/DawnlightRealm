@@ -6,7 +6,7 @@
 #include "QuestTypes.generated.h"
 
 UENUM(BlueprintType)
-enum class EQuestState : uint8
+enum class EQuestState : uint8  // 任务状态
 {
 	NotAccepted,
 	InProgress,
@@ -15,12 +15,12 @@ enum class EQuestState : uint8
 };
 
 USTRUCT(BlueprintType)
-struct FKillQuestObjective
+struct FKillQuestObjective  // 击杀目标
 {
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FName EnemyID;          // 
+	FName EnemyID;          // 敌人ID
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	int32 RequiredCount = 1; // 需求数量
@@ -30,7 +30,7 @@ struct FKillQuestObjective
 };
 
 USTRUCT(BlueprintType)
-struct FQuestReward
+struct FQuestReward // 任务奖励
 {
 	GENERATED_BODY()
 
@@ -57,7 +57,6 @@ struct FQuestData // 运行时数据
 
 	UPROPERTY(BlueprintReadOnly)
 	FQuestReward Reward;
-
 };
 
 

@@ -42,9 +42,6 @@ void APlayerCharacterBased::Die()
 	{
 		Anim->Montage_Play(DeathMontage);
 	}
-
-
-
 	
 	FTimerHandle Timer;
 	GetWorldTimerManager().SetTimer(

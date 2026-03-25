@@ -20,11 +20,7 @@ AWeaponBase::AWeaponBase()
 	HitBox = CreateDefaultSubobject<UBoxComponent>(TEXT("HitBox"));
 	HitBox->SetupAttachment(Mesh);
 
-	//HitBox 
-	/*HitBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	HitBox->SetCollisionObjectType(ECC_WorldDynamic);
-	HitBox->SetCollisionResponseToAllChannels(ECR_Ignore);
-	HitBox->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);*/
+	
 
 }
 

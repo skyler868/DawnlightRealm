@@ -86,7 +86,7 @@ void AEnemyBased::OnHit(float Damage)
 		}
 	}
 
-	// 可选：轻微停一下 AI（很重要但不复杂）
+	// 轻微停一下 AI
 	if (AAIController* AICon = Cast<AAIController>(GetController()))
 	{
 		AICon->StopMovement();
@@ -139,7 +139,7 @@ void AEnemyBased::Die()
 		
 	}
 
-	//  禁用碰撞（避免推人）
+	//  避免推人
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	//  禁止转向 / Root Motion 干扰

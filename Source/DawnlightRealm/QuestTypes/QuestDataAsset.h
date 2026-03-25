@@ -11,7 +11,7 @@
  * 
  */
 UCLASS()
-class DAWNLIGHTREALM_API UQuestDataAsset : public UDataAsset
+class DAWNLIGHTREALM_API UQuestDataAsset : public UDataAsset  // ≈‰÷√ ˝æ›
 {
 	GENERATED_BODY()
 public:

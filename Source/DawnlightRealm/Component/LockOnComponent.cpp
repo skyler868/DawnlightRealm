@@ -30,8 +30,6 @@ void ULockOnComponent::BeginPlay()
 }
 
 
-
-
 // Called every frame
 void ULockOnComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
